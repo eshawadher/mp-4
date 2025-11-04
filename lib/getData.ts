@@ -11,18 +11,20 @@ export default async function getData() {
             cache: "no-store",
         });
 
-        if (res.status === 429) {
-            return { ok: false, message: "Daily API limit reached. Try again later." };
+        if (res.status === 402) {
+            console.log(res.statusText);
+            return { ok: false, message: "Daily API Limit Reached. Try Again Later." };
         }
 
         if (!res.ok) {
-            return { ok: false, message: "The book API is unavailable. Please retry soon." };
+            return { ok: false, message: "The Book API is Unavailable. Please Retry Soon." };
         }
         const data = await res.json();
         const books = data?.books ?? [];
         return { ok: true, books };
     } catch (error) {
+        console.log(error);
         return {
-            ok: false, message: "Network error. Please check your connection." };
+            ok: false, message: "Network Error. Please Check Your Connection." };
     }
 }
