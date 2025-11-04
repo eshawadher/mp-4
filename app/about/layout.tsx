@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 
 export default function RootLayout(
     {children,}:
@@ -7,9 +6,9 @@ export default function RootLayout(
 ) {
     return (
         <html lang="en">
-        <body style={{'backgroundColor': '#FFEFEF'}}>
-        {children}
-        </body>
+                <body style={{'backgroundColor': '#FFEFEF'}}>
+                    {children}
+                </body>
         </html>
     );
 }
