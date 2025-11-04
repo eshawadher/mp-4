@@ -2,7 +2,7 @@ import getData from "@/lib/getData";
 import {BookTypes} from "@/types/BookTypes";
 import Link from "next/link";
 import React from "react";
-
+import RetryButton from "@/components/RetryButton";
 
 export default async function Home() {
 
@@ -14,7 +14,7 @@ export default async function Home() {
             <main style={{ padding: 24, background: "#fdecec", minHeight: "100vh" }}>
                 <h2>Books</h2>
                 <p style={{ color: "red" }}>{data.message}</p>
-                <button onClick={() => location.reload()}>Try Again</button>
+                <RetryButton/>
             </main>
         );
     }
